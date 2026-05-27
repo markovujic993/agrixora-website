@@ -3,181 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AgriXora — Farming Made Simple</title>
+    <title>AgriXora — Promena lozinke</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Segoe UI', sans-serif; color: #333; }
-
-        /* HERO */
-        .hero { 
-            background: url('hero.png') center center / cover no-repeat;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: flex-end;
-            text-align: center;
-            color: #fff;
-            position: relative;
-            padding: 0;
-        }
-
-        /* PRICA */
-        .prica-sekcija { padding: 80px 40px; background: #fff; }
-        .prica { max-width: 900px; margin: 0 auto; }
-        .prica h2 { font-size: 36px; color: #1a5c2a; margin-bottom: 40px; text-align: center; }
-        .prica p { font-size: 17px; color: #555; line-height: 1.9; margin-bottom: 25px; }
-        .prica .potpis { font-size: 20px; font-weight: bold; color: #1a5c2a; text-align: center; margin-top: 40px; padding: 30px; background: #f0f4f0; border-radius: 16px; }
-
-        /* FEATURES */
-        .features { padding: 80px 40px; background: #f0f4f0; }
-        .features h2 { text-align: center; font-size: 36px; color: #1a5c2a; margin-bottom: 15px; }
-        .features p.subtitle { text-align: center; color: #666; margin-bottom: 50px; font-size: 16px; }
-        .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; max-width: 1100px; margin: 0 auto; }
-        .feature-card { background: #fff; padding: 30px; border-radius: 16px; box-shadow: 0 2px 10px #00000011; }
-        .feature-icon { font-size: 40px; margin-bottom: 15px; }
-        .feature-card h3 { font-size: 20px; color: #1a5c2a; margin-bottom: 10px; }
-        .feature-card p { color: #666; line-height: 1.6; }
-
-        /* PRICING */
-        .pricing { padding: 80px 40px; background: #fff; text-align: center; }
-        .pricing h2 { font-size: 36px; color: #1a5c2a; margin-bottom: 15px; }
-        .pricing p.subtitle { color: #666; margin-bottom: 50px; font-size: 16px; }
-        .pricing-card { background: #1a5c2a; color: #fff; border-radius: 24px; padding: 50px; max-width: 450px; margin: 0 auto; }
-        .pricing-card .price { font-size: 64px; font-weight: bold; }
-        .pricing-card .price span { font-size: 24px; }
-        .pricing-card .period { color: #a8d5b5; margin-bottom: 30px; font-size: 16px; }
-        .pricing-features { list-style: none; text-align: left; margin-bottom: 35px; }
-        .pricing-features li { padding: 10px 0; border-bottom: 1px solid #ffffff22; font-size: 16px; }
-        .pricing-features li::before { content: "✓ "; color: #a8d5b5; font-weight: bold; }
-        .btn-white { background: #fff; color: #1a5c2a; padding: 16px 40px; border-radius: 30px; text-decoration: none; font-weight: bold; font-size: 18px; display: inline-block; }
-        .trial-note { color: #a8d5b5; margin-top: 15px; font-size: 14px; }
-
-        /* FOOTER */
-        footer { background: #1a5c2a; color: #fff; padding: 40px; text-align: center; }
-        footer p { color: #a8d5b5; margin-top: 10px; }
-        footer a { color: #a8d5b5; text-decoration: none; }
-
-        /* MOBILE */
-        @media (max-width: 768px) {
-            .hero {
-                background: url('hero.png') center center / contain no-repeat;
-                background-color: #0d1f0f;
-                min-height: auto;
-                aspect-ratio: 16/9;
-            }
-            .prica-sekcija { padding: 40px 20px; }
-            .prica h2 { font-size: 26px; }
-            .prica p { font-size: 15px; }
-            .features { padding: 40px 20px; }
-            .features h2 { font-size: 26px; }
-            .pricing { padding: 40px 20px; }
-            .pricing-card { padding: 30px 20px; }
-            .btn-white { font-size: 15px; padding: 14px 25px; }
-        }
+        body { font-family: 'Segoe UI', sans-serif; background: #f0f4f0; display: flex; align-items: center; justify-content: center; min-height: 100vh; }
+        .kartica { background: #fff; border-radius: 24px; padding: 50px 40px; max-width: 420px; width: 90%; text-align: center; box-shadow: 0 4px 20px #00000015; }
+        .logo { font-size: 32px; font-weight: bold; color: #1a5c2a; margin-bottom: 10px; }
+        .logo span { color: #a8d5b5; }
+        h2 { font-size: 22px; color: #333; margin-bottom: 15px; }
+        p { color: #666; font-size: 15px; line-height: 1.7; margin-bottom: 25px; }
+        .btn { background: #1a5c2a; color: #fff; padding: 16px 40px; border-radius: 30px; text-decoration: none; font-weight: bold; font-size: 17px; display: inline-block; }
+        .napomena { color: #999; font-size: 13px; margin-top: 20px; }
     </style>
 </head>
 <body>
-
-    <section class="hero">
-    </section>
-
-    <section class="prica-sekcija" id="prica">
-        <div class="prica">
-            <h2>Napravljeno od farmera, za farmere.</h2>
-            <p>Zovem se <strong>Marko Vujić</strong>. Farmer sam iz Srbije, i kao svaki farmer znam kako izgleda jedan radni dan — rano buđenje, njiva, mašine, vreme, cene, papiri. I uvek ona ista pitanja koja vrtim u glavi.</p>
-            <p>Koja je otkupna cena pšenice danas? Ima li novih subvencija koje mogu da prijavim? Šta je ova mrlja na listu kukuruza — bolest ili korov? Koliko sam tačno potrošio na ovoj parceli ove sezone? Ko mi od klijenata još duguje za oranje?</p>
-            <p>Odgovore sam tražio po desetinama sajtova, zvao agronoma, listao novine, pitao komšije. Trošio sam vreme koje mi je trebalo na njivi — a ne ispred ekrana.</p>
-            <p>Jednog dana sam rekao dosta. Ako nema app-e koja ima sve to — napraviću je sam. Tako je nastala <strong>AgriXora</strong>.</p>
-            <p>Mesecima sam radio na njoj, ugrađujući svako iskustvo sa njive. Svaku subvenciju koja mi je promakla. Svaku bolest koju nisam prepoznao na vreme. Svaku otkupnu cenu koju sam propustio jer nisam znao kad je pravo vreme za prodaju.</p>
-            <p>AgriXora nije napravljena u nekom uredu u Beogradu. Nije je napravio neko ko nije video njivu izbliza. Napravljena je ovde, u Srbiji, od čoveka koji svaki dan radi zemlju i zna šta farmer stvarno treba.</p>
-            <div class="potpis">Jer svaki srpski farmer zaslužuje da ima pametnog pomoćnika u džepu. 🌱🇷🇸</div>
-        </div>
-    </section>
-
-    <section class="features" id="funkcije">
-        <h2>Sve što farmer treba</h2>
-        <p class="subtitle">13 funkcija koje olakšavaju svakodnevni rad na farmi</p>
-        <div class="features-grid">
-            <div class="feature-card">
-                <div class="feature-icon">📸</div>
-                <h3>Analiza useva</h3>
-                <p>Fotografiši biljku i dobij stručnu dijagnozu bolesti, preporuku preparata i korake lečenja za nekoliko sekundi.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">🌱</div>
-                <h3>Evidencija parcela</h3>
-                <p>Vodi evidenciju svih parcela, troškova, prinosa i aktivnosti. App automatski računa profit po parceli.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">🦠</div>
-                <h3>Predikcija bolesti</h3>
-                <p>App prati vremenske uslove u tvojoj opštini i unapred te upozorava kada su uslovi povoljni za razvoj bolesti.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">💰</div>
-                <h3>Subvencije i krediti</h3>
-                <p>Sve dostupne subvencije i agro krediti na jednom mestu. Nikad više ne propusti rok za prijavu.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">📈</div>
-                <h3>Otkupne cene</h3>
-                <p>Pratite otkupne cene za 35 kultura i stočarstvo u realnom vremenu sa savetima kada prodati.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">⛅</div>
-                <h3>Vremenska prognoza</h3>
-                <p>5-dnevna prognoza prilagođena tvojoj lokaciji sa opisima na srpskom jeziku.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">🚜</div>
-                <h3>Moje usluge</h3>
-                <p>Evidencija usluga za klijente — ko duguje, ko je platio, istorija svih radova po klijentu.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">🏦</div>
-                <h3>Agro krediti</h3>
-                <p>9 banaka sa kamatama, rokovima i telefonima. Sve što trebaš da znaš pre odlaska u banku.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">🛡️</div>
-                <h3>Osiguranje useva</h3>
-                <p>6 osiguravača, pokriće rizika i kako da ostvariš državnu subvenciju do 40% premije.</p>
-            </div>
-        </div>
-    </section>
-
-    <section class="pricing" id="cena">
-        <h2>Jednostavna cena</h2>
-        <p class="subtitle">Bez skrivenih troškova. Otkaži kad god hoćeš.</p>
-        <div class="pricing-card">
-            <div class="price"><span>€</span>25</div>
-            <div class="period">mesečno po korisniku</div>
-            <ul class="pricing-features">
-                <li>Neograničen pristup svim funkcijama</li>
-                <li>80 skenova useva mesečno</li>
-                <li>Push notifikacije za bolesti i subvencije</li>
-                <li>Evidencija neograničenih parcela</li>
-                <li>Evidencija klijenata i usluga</li>
-                <li>Podrška na srpskom jeziku</li>
-            </ul>
-            <a href="#preuzmi" class="btn-white">Počni besplatno →</a>
-            <p class="trial-note">✓ 3 dana besplatnog triala — otkaži kad god hoćeš</p>
-        </div>
-    </section>
-
-    <section style="background: #f0f4f0; padding: 80px 40px; text-align: center;" id="preuzmi">
-        <h2 style="font-size: 36px; color: #1a5c2a; margin-bottom: 15px;">Preuzmi AgriXoru</h2>
-        <p style="color: #666; margin-bottom: 40px; font-size: 16px;">Dostupna na Android uređajima. iOS uskoro.</p>
-        <a href="#" style="background: #1a5c2a; color: #fff; padding: 18px 45px; border-radius: 30px; text-decoration: none; font-weight: bold; font-size: 18px; white-space: nowrap;">📱 Preuzmi na Google Play</a>
-    </section>
-
-    <footer>
-        <div class="logo" style="font-size: 28px; margin-bottom: 15px;">Agri<span style="color: #a8d5b5;">Xora</span></div>
-        <p>Farming Made Simple</p>
-        <p style="margin-top: 20px;"><a href="mailto:podrska@agrixora.com">podrska@agrixora.com</a></p>
-        <p style="margin-top: 20px; font-size: 13px;">© 2026 AgriXora. Sva prava zadržana.</p>
-    </footer>
-
+    <div class="kartica">
+        <div class="logo">Agri<span>Xora</span></div>
+        <h2>🔑 Promena lozinke</h2>
+        <p>Klikni dugme ispod da otvoriš AgriXora app i uneseš novu lozinku.</p>
+        <a href="#" class="btn" id="otvoriApp">Otvori AgriXora →</a>
+        <p class="napomena">Ako se app ne otvori automatski, proveri da li je instalirana na uređaju.</p>
+    </div>
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const token_hash = params.get('token_hash');
+        const type = params.get('type') || 'recovery';
+        if (token_hash) {
+            const deepLink = `agrixora://reset-lozinka?token_hash=${token_hash}&type=${type}`;
+            document.getElementById('otvoriApp').href = deepLink;
+            setTimeout(() => { window.location.href = deepLink; }, 500);
+        } else {
+            document.querySelector('p').textContent = 'Link nije validan ili je istekao.';
+            document.getElementById('otvoriApp').style.display = 'none';
+        }
+    </script>
 </body>
 </html>
