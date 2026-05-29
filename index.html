@@ -3,13 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AgriXora ΓÇö Farming Made Simple</title>
+    <title>AgriXora - Farming Made Simple</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Segoe UI', sans-serif; color: #333; }
 
-        /* HERO */
-        .hero { 
+        .hero {
             background: url('hero.png') center center / cover no-repeat;
             min-height: 100vh;
             display: flex;
@@ -22,7 +21,6 @@
             padding: 0;
         }
 
-        /* PRICA */
         .prica-sekcija { padding: 80px 40px; background: #fff; }
         .prica { max-width: 900px; margin: 0 auto; }
         .prica h2 { font-size: 36px; color: #1a5c2a; margin-bottom: 40px; text-align: center; }
@@ -31,7 +29,6 @@
         .prica .funkcije-lista li { padding: 14px 0; border-bottom: 1px solid #f0f0f0; font-size: 16px; color: #444; line-height: 1.6; }
         .prica .potpis { font-size: 20px; font-weight: bold; color: #1a5c2a; text-align: center; margin-top: 40px; padding: 30px; background: #f0f4f0; border-radius: 16px; }
 
-        /* FEATURES */
         .features { padding: 80px 40px; background: #f0f4f0; }
         .features h2 { text-align: center; font-size: 36px; color: #1a5c2a; margin-bottom: 15px; }
         .features p.subtitle { text-align: center; color: #666; margin-bottom: 50px; font-size: 16px; }
@@ -41,7 +38,6 @@
         .feature-card h3 { font-size: 20px; color: #1a5c2a; margin-bottom: 10px; }
         .feature-card p { color: #666; line-height: 1.6; }
 
-        /* PRICING */
         .pricing { padding: 80px 40px; background: #fff; text-align: center; }
         .pricing h2 { font-size: 36px; color: #1a5c2a; margin-bottom: 15px; }
         .pricing p.subtitle { color: #666; margin-bottom: 50px; font-size: 16px; }
@@ -51,23 +47,16 @@
         .pricing-card .period { color: #a8d5b5; margin-bottom: 30px; font-size: 16px; }
         .pricing-features { list-style: none; text-align: left; margin-bottom: 35px; }
         .pricing-features li { padding: 10px 0; border-bottom: 1px solid #ffffff22; font-size: 16px; }
-        .pricing-features li::before { content: "Γ£ô "; color: #a8d5b5; font-weight: bold; }
+        .pricing-features li::before { content: "✔ "; color: #a8d5b5; font-weight: bold; }
         .btn-white { background: #fff; color: #1a5c2a; padding: 16px 40px; border-radius: 30px; text-decoration: none; font-weight: bold; font-size: 18px; display: inline-block; }
         .trial-note { color: #a8d5b5; margin-top: 15px; font-size: 14px; }
 
-        /* FOOTER */
         footer { background: #1a5c2a; color: #fff; padding: 40px; text-align: center; }
         footer p { color: #a8d5b5; margin-top: 10px; }
         footer a { color: #a8d5b5; text-decoration: none; }
 
-        /* MOBILE */
         @media (max-width: 768px) {
-            .hero {
-                background: url('hero.png') center center / contain no-repeat;
-                background-color: #0d1f0f;
-                min-height: auto;
-                aspect-ratio: 16/9;
-            }
+            .hero { background: url('hero.png') center center / contain no-repeat; background-color: #0d1f0f; min-height: auto; aspect-ratio: 16/9; }
             .prica-sekcija { padding: 40px 20px; }
             .prica h2 { font-size: 26px; }
             .prica p { font-size: 15px; }
@@ -81,116 +70,115 @@
 </head>
 <body>
 
-    <section class="hero">
-    </section>
+<section class="hero"></section>
 
-    <section class="prica-sekcija" id="prica">
-        <div class="prica">
-            <h2>Napravljeno od farmera, za farmere.</h2>
-            <p>Zovem se <strong>Marko Vuji─ç</strong>. Farmer sam iz Srbije, i kao svaki farmer znam kako izgleda jedan radni dan ΓÇö rano bu─æenje, njiva, ma┼íine, vreme, cene, papiri. I uvek ona ista pitanja koja vrtim u glavi.</p>
-            <p>Koja je otkupna cena p┼íenice danas? Ima li novih subvencija koje mogu da prijavim? ┼áta je ova mrlja na listu kukuruza ΓÇö bolest ili korov? Koliko sam ta─ìno potro┼íio na ovoj parceli ove sezone? Ko mi od klijenata jo┼í duguje za oranje?</p>
-            <p>Odgovore sam tra┼╛io po desetinama sajtova, zvao agronoma, listao novine, pitao kom┼íije. Tro┼íio sam vreme koje mi je trebalo na njivi ΓÇö a ne ispred ekrana.</p>
-            <p>Jednog dana sam rekao dosta. Ako nema app-e koja ima sve to ΓÇö napravi─çu je sam. Tako je nastala <strong>AgriXora</strong>.</p>
-            <p>Mesecima sam radio na njoj, ugra─æuju─çi svako iskustvo sa njive. Svaku subvenciju koja mi je promakla. Svaku bolest koju nisam prepoznao na vreme. Svaku otkupnu cenu koju sam propustio jer nisam znao kad je pravo vreme za prodaju.</p>
-            <p>Danas AgriXora ima sve ┼íto jedan srpski farmer treba:</p>
-            <ul class="funkcije-lista">
-                <li>≡ƒî▒ <strong>Evidencija parcela</strong> ΓÇö tro┼íkovi, prinos, profit po parceli</li>
-                <li>≡ƒô╕ <strong>Analiza useva</strong> ΓÇö fotografi┼íi biljku i dobij dijagnozu i preporuku preparata</li>
-                <li>≡ƒªá <strong>Predikcija bolesti</strong> ΓÇö AgriXora prati vremenske uslove i unapred te upozorava kada su uslovi povoljni za razvoj bolesti</li>
-                <li>≡ƒÆ░ <strong>Subvencije i krediti</strong> ΓÇö sve dostupne subvencije na jednom mestu, nikad vi┼íe ne propusti rok</li>
-                <li>≡ƒôê <strong>Otkupne cene</strong> ΓÇö 35 kultura u realnom vremenu sa savetom kada prodati</li>
-                <li>≡ƒÜ£ <strong>Evidencija usluga</strong> ΓÇö ko ti duguje za oranje, ko je platio, kompletna istorija po klijentu</li>
-                <li>Γ¢à <strong>Vreme</strong> ΓÇö 5-dnevna prognoza za tvoju lokaciju na srpskom</li>
-                <li>≡ƒÅª <strong>Krediti i osiguranje</strong> ΓÇö sve banke, sve kamate, svi osigurava─ìi na jednom mestu</li>
-            </ul>
-            <p>AgriXora nije napravljena u nekom uredu u Beogradu. Nije je napravio neko ko nije video njivu izbliza. Napravljena je ovde, u Srbiji, od ─ìoveka koji svaki dan radi zemlju i zna ┼íta farmer stvarno treba.</p>
-            <div class="potpis">Jer svaki srpski farmer zaslu┼╛uje da ima pametnog pomo─çnika u d┼╛epu. ≡ƒî▒≡ƒç╖≡ƒç╕</div>
+<section class="prica-sekcija" id="prica">
+    <div class="prica">
+        <h2>Napravljeno od farmera, za farmere.</h2>
+        <p>Zovem se <strong>Marko Vujic</strong>. Farmer sam iz Srbije, i kao svaki farmer znam kako izgleda jedan radni dan — rano budjenje, njiva, masine, vreme, cene, papiri. I uvek ona ista pitanja koja vrtim u glavi.</p>
+        <p>Koja je otkupna cena psenice danas? Ima li novih subvencija koje mogu da prijavim? Sta je ova mrlja na listu kukuruza — bolest ili korov? Koliko sam tacno potrosio na ovoj parceli ove sezone? Ko mi od klijenata jos duguje za oranje?</p>
+        <p>Odgovore sam trazio po desetinama sajtova, zvao agronoma, listao novine, pitao komsijeije. Trosio sam vreme koje mi je trebalo na njivi — a ne ispred ekrana.</p>
+        <p>Jednog dana sam rekao dosta. Ako nema app-e koja ima sve to — napravicu je sam. Tako je nastala <strong>AgriXora</strong>.</p>
+        <p>Mesecima sam radio na njoj, ugradjujuci svako iskustvo sa njive. Svaku subvenciju koja mi je promakla. Svaku bolest koju nisam prepoznao na vreme. Svaku otkupnu cenu koju sam propustio jer nisam znao kad je pravo vreme za prodaju.</p>
+        <p>Danas AgriXora ima sve sto jedan srpski farmer treba:</p>
+        <ul class="funkcije-lista">
+            <li>&#127807; <strong>Evidencija parcela</strong> — troskovi, prinos, profit po parceli</li>
+            <li>&#128247; <strong>Analiza useva</strong> — fotografisi biljku i dobij dijagnozu i preporuku preparata</li>
+            <li>&#127810; <strong>Predikcija bolesti</strong> — AgriXora prati vremenske uslove i unapred te upozorava</li>
+            <li>&#127888; <strong>Subvencije i krediti</strong> — sve dostupne subvencije na jednom mestu</li>
+            <li>&#128200; <strong>Otkupne cene</strong> — 35 kultura u realnom vremenu sa savetom kada prodati</li>
+            <li>&#128163; <strong>Evidencija usluga</strong> — ko ti duguje za oranje, ko je platio</li>
+            <li>&#9728; <strong>Vreme</strong> — 5-dnevna prognoza za tvoju lokaciju na srpskom</li>
+            <li>&#127978; <strong>Krediti i osiguranje</strong> — sve banke, sve kamate, svi osiguravaci na jednom mestu</li>
+        </ul>
+        <p>AgriXora nije napravljena u nekom uredu u Beogradu. Napravljena je ovde, u Srbiji, od coveka koji svaki dan radi zemlju i zna sta farmer stvarno treba.</p>
+        <div class="potpis">Jer svaki srpski farmer zasluzuje da ima pametnog pomocnika u dzepu. &#127807;&#127464;&#127480;</div>
+    </div>
+</section>
+
+<section class="features" id="funkcije">
+    <h2>Sve sto farmer treba</h2>
+    <p class="subtitle">13 funkcija koje olaksavaju svakodnevni rad na farmi</p>
+    <div class="features-grid">
+        <div class="feature-card">
+            <div class="feature-icon">&#128247;</div>
+            <h3>Analiza useva</h3>
+            <p>Fotografisi biljku i dobij strucnu dijagnozu bolesti, preporuku preparata i korake lecenja za nekoliko sekundi.</p>
         </div>
-    </section>
-
-    <section class="features" id="funkcije">
-        <h2>Sve ┼íto farmer treba</h2>
-        <p class="subtitle">13 funkcija koje olak┼íavaju svakodnevni rad na farmi</p>
-        <div class="features-grid">
-            <div class="feature-card">
-                <div class="feature-icon">≡ƒô╕</div>
-                <h3>Analiza useva</h3>
-                <p>Fotografi┼íi biljku i dobij stru─ìnu dijagnozu bolesti, preporuku preparata i korake le─ìenja za nekoliko sekundi.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">≡ƒî▒</div>
-                <h3>Evidencija parcela</h3>
-                <p>Vodi evidenciju svih parcela, tro┼íkova, prinosa i aktivnosti. App automatski ra─ìuna profit po parceli.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">≡ƒªá</div>
-                <h3>Predikcija bolesti</h3>
-                <p>App prati vremenske uslove u tvojoj op┼ítini i unapred te upozorava kada su uslovi povoljni za razvoj bolesti.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">≡ƒÆ░</div>
-                <h3>Subvencije i krediti</h3>
-                <p>Sve dostupne subvencije i agro krediti na jednom mestu. Nikad vi┼íe ne propusti rok za prijavu.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">≡ƒôê</div>
-                <h3>Otkupne cene</h3>
-                <p>Pratite otkupne cene za 35 kultura i sto─ìarstvo u realnom vremenu sa savetima kada prodati.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">Γ¢à</div>
-                <h3>Vremenska prognoza</h3>
-                <p>5-dnevna prognoza prilago─æena tvojoj lokaciji sa opisima na srpskom jeziku.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">≡ƒÜ£</div>
-                <h3>Moje usluge</h3>
-                <p>Evidencija usluga za klijente ΓÇö ko duguje, ko je platio, istorija svih radova po klijentu.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">≡ƒÅª</div>
-                <h3>Agro krediti</h3>
-                <p>9 banaka sa kamatama, rokovima i telefonima. Sve ┼íto treba┼í da zna┼í pre odlaska u banku.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">≡ƒ¢í∩╕Å</div>
-                <h3>Osiguranje useva</h3>
-                <p>6 osigurava─ìa, pokri─çe rizika i kako da ostvari┼í dr┼╛avnu subvenciju do 40% premije.</p>
-            </div>
+        <div class="feature-card">
+            <div class="feature-icon">&#127807;</div>
+            <h3>Evidencija parcela</h3>
+            <p>Vodi evidenciju svih parcela, troskova, prinosa i aktivnosti. App automatski racuna profit po parceli.</p>
         </div>
-    </section>
-
-    <section class="pricing" id="cena">
-        <h2>Jednostavna cena</h2>
-        <p class="subtitle">Bez skrivenih tro┼íkova. Otka┼╛i kad god ho─çe┼í.</p>
-        <div class="pricing-card">
-            <div class="price"><span>Γé¼</span>25</div>
-            <div class="period">mese─ìno po korisniku</div>
-            <ul class="pricing-features">
-                <li>Neograni─ìen pristup svim funkcijama</li>
-                <li>80 skenova useva mese─ìno</li>
-                <li>Push notifikacije za bolesti i subvencije</li>
-                <li>Evidencija neograni─ìenih parcela</li>
-                <li>Evidencija klijenata i usluga</li>
-                <li>Podr┼íka na srpskom jeziku</li>
-            </ul>
-            <a href="#preuzmi" class="btn-white">Po─ìni besplatno ΓåÆ</a>
-            <p class="trial-note">Γ£ô 3 dana besplatnog triala ΓÇö otka┼╛i kad god ho─çe┼í</p>
+        <div class="feature-card">
+            <div class="feature-icon">&#127810;</div>
+            <h3>Predikcija bolesti</h3>
+            <p>App prati vremenske uslove u tvojoj opstini i unapred te upozorava kada su uslovi povoljni za razvoj bolesti.</p>
         </div>
-    </section>
+        <div class="feature-card">
+            <div class="feature-icon">&#127888;</div>
+            <h3>Subvencije i krediti</h3>
+            <p>Sve dostupne subvencije i agro krediti na jednom mestu. Nikad vise ne propusti rok za prijavu.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">&#128200;</div>
+            <h3>Otkupne cene</h3>
+            <p>Pratite otkupne cene za 35 kultura i stocarstvo u realnom vremenu sa savetima kada prodati.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">&#9728;</div>
+            <h3>Vremenska prognoza</h3>
+            <p>5-dnevna prognoza prilagodjena tvojoj lokaciji sa opisima na srpskom jeziku.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">&#128163;</div>
+            <h3>Moje usluge</h3>
+            <p>Evidencija usluga za klijente — ko duguje, ko je platio, istorija svih radova po klijentu.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">&#127978;</div>
+            <h3>Agro krediti</h3>
+            <p>9 banaka sa kamatama, rokovima i telefonima. Sve sto treba da znas pre odlaska u banku.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">&#128737;</div>
+            <h3>Osiguranje useva</h3>
+            <p>6 osiguravaca, pokrice rizika i kako da ostvaris drzavnu subvenciju do 40% premije.</p>
+        </div>
+    </div>
+</section>
 
-    <section style="background: #f0f4f0; padding: 80px 40px; text-align: center;" id="preuzmi">
-        <h2 style="font-size: 36px; color: #1a5c2a; margin-bottom: 15px;">Preuzmi AgriXoru</h2>
-        <p style="color: #666; margin-bottom: 40px; font-size: 16px;">Dostupna na Android ure─æajima. iOS uskoro.</p>
-        <a href="#" style="background: #1a5c2a; color: #fff; padding: 18px 45px; border-radius: 30px; text-decoration: none; font-weight: bold; font-size: 18px; white-space: nowrap;">≡ƒô▒ Preuzmi na Google Play</a>
-    </section>
+<section class="pricing" id="cena">
+    <h2>Jednostavna cena</h2>
+    <p class="subtitle">Bez skrivenih troskova. Otkazi kad god hoces.</p>
+    <div class="pricing-card">
+        <div class="price"><span>&#8364;</span>28</div>
+        <div class="period">mesecno po korisniku</div>
+        <ul class="pricing-features">
+            <li>Neogranicen pristup svim funkcijama</li>
+            <li>80 skenova useva mesecno</li>
+            <li>Push notifikacije za bolesti i subvencije</li>
+            <li>Evidencija neogranicenih parcela</li>
+            <li>Evidencija klijenata i usluga</li>
+            <li>Podrska na srpskom jeziku</li>
+        </ul>
+        <a href="#preuzmi" class="btn-white">Pocni besplatno &#8594;</a>
+        <p class="trial-note">&#10003; 3 dana besplatnog triala — otkazi kad god hoces</p>
+    </div>
+</section>
 
-    <footer>
-        <div class="logo" style="font-size: 28px; margin-bottom: 15px;">Agri<span style="color: #a8d5b5;">Xora</span></div>
-        <p>Farming Made Simple</p>
-        <p style="margin-top: 20px;"><a href="mailto:podrska@agrixora.com">podrska@agrixora.com</a></p>
-        <p style="margin-top: 20px; font-size: 13px;">┬⌐ 2026 AgriXora. Sva prava zadr┼╛ana.</p>
-    </footer>
+<section style="background: #f0f4f0; padding: 80px 40px; text-align: center;" id="preuzmi">
+    <h2 style="font-size: 36px; color: #1a5c2a; margin-bottom: 15px;">Preuzmi AgriXoru</h2>
+    <p style="color: #666; margin-bottom: 40px; font-size: 16px;">Dostupna na Android uredjajima. iOS uskoro.</p>
+    <a href="#" style="background: #1a5c2a; color: #fff; padding: 18px 45px; border-radius: 30px; text-decoration: none; font-weight: bold; font-size: 18px;">&#128241; Preuzmi na Google Play</a>
+</section>
+
+<footer>
+    <div style="font-size: 28px; margin-bottom: 15px;">Agri<span style="color: #a8d5b5;">Xora</span></div>
+    <p>Farming Made Simple</p>
+    <p style="margin-top: 20px;"><a href="mailto:podrska@agrixora.com">podrska@agrixora.com</a></p>
+    <p style="margin-top: 20px; font-size: 13px;">&#169; 2026 AgriXora. Sva prava zadrzana.</p>
+</footer>
 
 </body>
 </html>
