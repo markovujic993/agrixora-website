@@ -4,6 +4,7 @@
     { "src": "/privacy", "dest": "/privacy.html" },
     { "src": "/refund", "dest": "/refund.html" },
     { "src": "/terms", "dest": "/terms.html" },
+    { "src": "/hero.png", "dest": "/hero.png" },
     { "src": "/(.*)", "dest": "/index.html" }
   ]
 }
