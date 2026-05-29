@@ -1,1 +1,7 @@
-{}
+{
+  "routes": [
+    { "src": "/reset-lozinka", "dest": "/reset-lozinka.html" },
+    { "src": "/", "dest": "/index.html" },
+    { "src": "/(.*)", "dest": "/$1" }
+  ]
+}
