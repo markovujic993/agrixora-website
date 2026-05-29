@@ -1,3 +1,6 @@
 {
-    "cleanUrls": true
-  }
+  "rewrites": [
+    { "source": "/reset-lozinka", "destination": "/reset-lozinka/index.html" },
+    { "source": "/", "destination": "/index.html" }
+  ]
+}
