@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgriXora - Pretplata</title>
+    <script src="https://cdn.paddle.com/paddle/v2/paddle.js"></script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', sans-serif; background: #f0f4f0; display: flex; align-items: center; justify-content: center; min-height: 100vh; }
+        .container { background: #fff; border-radius: 24px; padding: 40px; max-width: 420px; width: 90%; text-align: center; box-shadow: 0 4px 20px #00000015; }
+        .logo { font-size: 32px; font-weight: bold; color: #1a5c2a; margin-bottom: 8px; }
+        .logo span { color: #a8d5b5; }
+        .subtitle { color: #666; margin-bottom: 30px; font-size: 15px; }
+        .cena { font-size: 56px; font-weight: bold; color: #1a5c2a; }
+        .cena span { font-size: 22px; }
+        .period { color: #999; margin-bottom: 25px; }
+        .lista { list-style: none; text-align: left; margin-bottom: 30px; }
+        .lista li { padding: 10px 0; border-bottom: 1px solid #f0f0f0; color: #444; font-size: 15px; }
+        .lista li::before { content: "✔ "; color: #1a5c2a; font-weight: bold; }
+        .btn { background: #1a5c2a; color: #fff; border: none; padding: 18px 40px; border-radius: 30px; font-size: 18px; font-weight: bold; cursor: pointer; width: 100%; }
+        .btn:hover { background: #145022; }
+        .trial { color: #999; font-size: 13px; margin-top: 12px; }
+        .loading { color: #666; font-size: 15px; margin-top: 20px; display: none; }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="logo">Agri<span>Xora</span></div>
+    <p class="subtitle">Farming Made Simple 🌾</p>
+    <div class="cena"><span>€</span>28</div>
+    <div class="period">mesečno po korisniku</div>
+    <ul class="lista">
+        <li>Neograničen pristup svim funkcijama</li>
+        <li>80 skenova useva mesečno</li>
+        <li>Push notifikacije za bolesti i subvencije</li>
+        <li>Evidencija neograničenih parcela</li>
+        <li>Podrška na srpskom jeziku</li>
+    </ul>
+    <button class="btn" onclick="otvoriCheckout()">Pocni besplatno →</button>
+    <p class="trial">✓ 3 dana besplatnog triala — otkaži kad god hoćeš</p>
+    <p class="loading" id="loading">Učitavanje...</p>
+</div>
+
+<script>
+    Paddle.Initialize({
+        token: 'live_eb4edc8577520e068fc1131e314'
+    });
+
+    // Uzmi email iz URL parametra
+    const urlParams = new URLSearchParams(window.location.search);
+    const email = urlParams.get('email') || '';
+
+    function otvoriCheckout() {
+        document.getElementById('loading').style.display = 'block';
+        Paddle.Checkout.open({
+            items: [{ priceId: 'pri_01ksn4ezdvas5md1cd52ksn4g3', quantity: 1 }],
+            customer: { email: email },
+            settings: {
+                displayMode: 'overlay',
+                theme: 'light',
+                locale: 'en',
+            },
+            successCallback: function() {
+                window.location.href = 'https://agrixora.com/uspesno';
+            }
+        });
+        document.getElementById('loading').style.display = 'none';
+    }
+</script>
+</body>
+</html>
