@@ -47,7 +47,6 @@
         token: 'live_eb4edc8577520e068fc1131e314'
     });
 
-    // Uzmi email iz URL parametra
     const urlParams = new URLSearchParams(window.location.search);
     const email = urlParams.get('email') || '';
 
@@ -66,6 +65,12 @@
             }
         });
         document.getElementById('loading').style.display = 'none';
+    }
+
+    if (email) {
+        window.addEventListener('load', function() {
+            setTimeout(otvoriCheckout, 500);
+        });
     }
 </script>
 </body>
