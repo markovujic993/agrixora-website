@@ -5,6 +5,7 @@
     { "src": "/refund", "dest": "/refund.html" },
     { "src": "/terms", "dest": "/terms.html" },
     { "src": "/pretplata", "dest": "/pretplata.html" },
+    { "src": "/uspesno", "dest": "/uspesno.html" },
     { "src": "/hero.png", "dest": "/hero.png" },
     { "src": "/(.*)", "dest": "/index.html" }
   ]
