@@ -15,21 +15,76 @@
         p { color: #666; font-size: 15px; line-height: 1.7; margin-bottom: 25px; }
         .btn { background: #1a5c2a; color: #fff; padding: 16px 40px; border-radius: 30px; text-decoration: none; font-weight: bold; font-size: 17px; display: inline-block; }
         .napomena { color: #999; font-size: 13px; margin-top: 20px; }
+        .spinner { font-size: 40px; margin: 20px 0; animation: spin 1s linear infinite; display: inline-block; }
+        @keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
     </style>
 </head>
 <body>
     <div class="kartica">
         <div class="logo">Agri<span>Xora</span></div>
-        <div class="ikona">🎉</div>
-        <h2>Dobrodošao u AgriXoru!</h2>
-        <p>Tvoj nalog je uspešno kreiran. Za sekundu otvara se app automatski!</p>
-        <a href="agrixora://" class="btn">Otvori AgriXora app</a>
-        <p class="napomena">Ako se app ne otvori automatski, klikni dugme iznad.</p>
+        <div class="ikona" id="ikona">⏳</div>
+        <h2 id="naslov">Kreiramo tvoj nalog...</h2>
+        <p id="poruka">Molimo sačekaj nekoliko sekundi.</p>
+        <a href="agrixora://" class="btn" id="btn" style="display:none;">Otvori AgriXora app</a>
+        <p class="napomena" id="napomena" style="display:none;">Ako se app ne otvori automatski, klikni dugme iznad.</p>
     </div>
     <script>
-        setTimeout(() => {
-            window.location.href = 'agrixora://';
-        }, 1000);
+        const urlParams = new URLSearchParams(window.location.search);
+        const email = urlParams.get('email') || '';
+
+        const SUPABASE_URL = 'https://wvdzkougkubysxcognfa.supabase.co';
+        const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Ind2ZHprb3Vna3VieXN4Y29nbmZhIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDgzNTQzNDIsImV4cCI6MjA2MzkzMDM0Mn0.Qfys5KPFPygFhfxdXK5aXTDDPOJoFJBGE0anv95STXE';
+
+        let pokusaji = 0;
+        const maxPokusaja = 15;
+
+        async function proveriKorisnika() {
+            if (!email) {
+                otvoriApp();
+                return;
+            }
+
+            try {
+                const res = await fetch(
+                    `${SUPABASE_URL}/rest/v1/korisnici?email=eq.${encodeURIComponent(email)}&select=id`,
+                    {
+                        headers: {
+                            'apikey': SUPABASE_ANON_KEY,
+                            'Authorization': `Bearer ${SUPABASE_ANON_KEY}`
+                        }
+                    }
+                );
+                const data = await res.json();
+
+                if (data && data.length > 0) {
+                    otvoriApp();
+                } else {
+                    pokusaji++;
+                    if (pokusaji >= maxPokusaja) {
+                        // Nakon 30 sekundi otvori app bez obzira
+                        otvoriApp();
+                    } else {
+                        setTimeout(proveriKorisnika, 2000);
+                    }
+                }
+            } catch (e) {
+                pokusaji++;
+                setTimeout(proveriKorisnika, 2000);
+            }
+        }
+
+        function otvoriApp() {
+            document.getElementById('ikona').textContent = '🎉';
+            document.getElementById('naslov').textContent = 'Dobrodošao u AgriXoru!';
+            document.getElementById('poruka').textContent = 'Tvoj nalog je uspešno kreiran. Za sekundu otvara se app automatski!';
+            document.getElementById('btn').style.display = 'inline-block';
+            document.getElementById('napomena').style.display = 'block';
+            setTimeout(() => {
+                window.location.href = 'agrixora://';
+            }, 1000);
+        }
+
+        proveriKorisnika();
     </script>
 </body>
 </html>

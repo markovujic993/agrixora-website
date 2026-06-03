@@ -61,7 +61,7 @@
                 locale: 'en',
             },
             successCallback: function() {
-                window.location.href = 'https://agrixora.com/uspesno';
+                window.location.href = 'https://agrixora.com/uspesno?email=' + encodeURIComponent(email);
             }
         });
         document.getElementById('loading').style.display = 'none';
