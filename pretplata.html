@@ -44,7 +44,12 @@
 
 <script>
     Paddle.Initialize({
-        token: 'live_eb4edc8577520e068fc1131e314'
+        token: 'live_eb4edc8577520e068fc1131e314',
+        eventCallback: function(event) {
+            if (event.name === 'checkout.completed') {
+                window.location.href = 'https://agrixora.com/uspesno?email=' + encodeURIComponent(email);
+            }
+        }
     });
 
     const urlParams = new URLSearchParams(window.location.search);
@@ -59,10 +64,8 @@
                 displayMode: 'overlay',
                 theme: 'light',
                 locale: 'en',
+                successUrl: 'https://agrixora.com/uspesno?email=' + encodeURIComponent(email),
             },
-            successCallback: function() {
-                window.location.href = 'https://agrixora.com/uspesno?email=' + encodeURIComponent(email);
-            }
         });
         document.getElementById('loading').style.display = 'none';
     }
